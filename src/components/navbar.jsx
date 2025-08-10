@@ -12,18 +12,18 @@ function Navbar() {
     };
   return (
     <div>
-      <nav className="fixed top-0 left-0 right-0 z-50 py-4 px-6 flex justify-between items-center backdrop-blur-sm bg-transparent border-b-2 border-black/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 py-4 px-6 mx-48 flex justify-between items-center backdrop-blur-sm bg-transparent border-b-2 border-black/10">
                 <a href="#hero" className="text-3xl font-extrabold text-white">
                     SURGE
                 </a>
                 
                 {/* Desktop Navigation */}
                 <ul className="hidden md:flex space-x-8 text-lg font-semibold">
-                    {['about', 'hod', 'events', 'committee', 'testimonials'].map((section) => (
+                    {['about', 'events', 'committee', 'testimonials'].map((section) => (
                         <li key={section}>
                             <button
                                 onClick={() => smoothScrollTo(section)}
-                                className={`relative px-3 py-2 text-red-300 hover:text-red-500 transition-colors duration-300 capitalize ${
+                                className={`relative px-3 py-2 text-red-500 hover:text-red-300 transition-colors duration-300 capitalize ${
                                     activeSection === section ? 'text-red-500' : ''
                                 }`}
                             >

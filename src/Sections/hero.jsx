@@ -36,12 +36,12 @@ function HeroSection() {
                         {/* Decorative elements around title */}
                         
                         <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-white mb-4 sm:mb-6 tracking-wider animate-fade-in-up">
-                            <span className="block bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent drop-shadow-2xl">
-                                SURGE
-                            </span>
-                            <span className="block text-red-500 neon-text-red drop-shadow-2xl">
+                            <span className=" bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent drop-shadow-2xl">
+                                SURGE <span className=" text-red-500 neon-text-red drop-shadow-2xl">
                                 CEC
                             </span>
+                            </span>
+                            
                         </h1>
                         
                         {/* Decorative line under title */}
@@ -52,7 +52,7 @@ function HeroSection() {
                     {/* Enhanced subtitle with formal styling */}
                     <div className="relative mb-12 sm:mb-16">
                         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-red-300 tracking-wide mb-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                            Department of Electrical Engineering
+                            Departmental Forum of Electrical & Electronics Engineering
                         </p>
                         <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed font-light animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
                             Pioneering Excellence in Engineering Education & Innovation

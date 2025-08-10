@@ -1,4 +1,3 @@
- 
 import React, { useState, useEffect, useRef } from 'react';
 import HeroSection from '../Sections/hero';
 import AboutSection from '../Sections/about';
@@ -80,9 +79,9 @@ function HomePage() {
                         to { transform: rotate(360deg); }
                     }
                     @keyframes neon-glow {
-                        0% { text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000; }
-                        50% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; }
-                        100% { text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000; }
+                        0% { text-shadow: 0 0 5px #ef4444, 0 0 10px #ef4444, 0 0 15px #ef4444; }
+                        50% { text-shadow: 0 0 10px #ef4444, 0 0 20px #ef4444, 0 0 30px #ef4444; }
+                        100% { text-shadow: 0 0 5px #ef4444, 0 0 10px #ef4444, 0 0 15px #ef4444; }
                     }
                     .neon-text {
                         animation: neon-glow 2s ease-in-out infinite alternate;
@@ -92,11 +91,18 @@ function HomePage() {
                     }
                 `}</style>
                 <div className="text-center">
-                    <div className="loading-pulse mb-8">
-                        <div className="w-20 h-20 border-4 border-red-500 border-t-transparent rounded-full loading-spinner mx-auto"></div>
+                    <div className="loading-pulse mb-2 relative">
+                        {/* Lightning bolt icon */}
+                        <div className="w-20 h-20 text-red-500 mx-auto mb-4">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 10V3L4 14h7v7l9-11h-7z" strokeDasharray="80" strokeDashoffset="80">
+                                    <animate attributeName="stroke-dashoffset" values="80;0;80" dur="1.5s" repeatCount="indefinite"></animate>
+                                </path>
+                            </svg>
+                        </div>
+                        {/* Spinner */}v>
                     </div>
-                    <h1 className="text-4xl font-bold text-red-500 neon-text animate-pulse">SURGE</h1>
-                    <p className="text-red-300 mt-2">Loading Innovation...</p>
+                    <p className="text-red-300 text-xl mt-2">Loading Innovation...</p>
                 </div>
             </div>
         );

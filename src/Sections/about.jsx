@@ -33,7 +33,7 @@ function AboutSection() {
             
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center p-8 md:p-12">
               {/* Enhanced image section */}
-              <div className="order-2 lg:order-1 relative group">
+              <div className="order-1 lg:order-1 relative group">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                   {/* Image overlay effects */}
                   <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
@@ -49,7 +49,7 @@ function AboutSection() {
                   <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-red-500/30 transition-all duration-500"></div>
                   
                   {/* Enhanced statistics cards */}
-                  <div className="absolute bottom-4 right-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="absolute hidden bottom-4 right-4 lg:grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="bg-black/70 backdrop-blur-sm p-4 rounded-xl border border-red-800/50 hover:border-red-600/70 transition-all duration-300 group/stat">
                       <div className="text-2xl font-bold text-red-500 group-hover/stat:text-red-400 transition-colors">500+</div>
                       <div className="text-xs sm:text-sm text-gray-400 font-medium">Active Members</div>
@@ -67,7 +67,7 @@ function AboutSection() {
               </div>
               
               {/* Enhanced content section */}
-              <div className="order-1 lg:order-2 space-y-8">
+              <div className="order-2 lg:order-2 space-y-8">
                 <div className="space-y-6">
                   <div className="relative">
                     <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-red-500 to-transparent rounded-full"></div>

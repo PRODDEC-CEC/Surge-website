@@ -5,7 +5,7 @@ const defaultColors = ["#ffffff", "#ffffff", "#ffffff"];
 
 const hexToRgb = (hex) => {
   hex = hex.replace(/^#/, "");
-  if (hex.length === 3) {
+  if (hex.length === 5) {
     hex = hex.split("").map((c) => c + c).join("");
   }
   const int = parseInt(hex, 16);
@@ -76,15 +76,15 @@ const fragment = /* glsl */ `
 
 const Particles = ({
   particleCount = 200,
-  particleSpread = 10,
-  speed = 0.1,
+  particleSpread = 50,
+  speed = 0.5,
   particleColors,
   moveParticlesOnHover = false,
   particleHoverFactor = 1,
-  alphaParticles = false,
-  particleBaseSize = 100,
-  sizeRandomness = 1,
-  cameraDistance = 20,
+  alphaParticles = true,
+  particleBaseSize = 300,
+  sizeRandomness = 2,
+  cameraDistance = 15,
   disableRotation = false,
   className,
 }) => {
