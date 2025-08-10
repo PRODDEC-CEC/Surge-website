@@ -18,7 +18,7 @@ function Navbar() {
                 </a>
                 
                 {/* Desktop Navigation */}
-                <ul className="hidden md:flex space-x-8 text-lg font-semibold">
+                <ul className="hidden md:flex space-x-8 text-lg font-normal">
                     {['about', 'events', 'committee', 'testimonials'].map((section) => (
                         <li key={section}>
                             <button

@@ -100,9 +100,9 @@ function HomePage() {
                                 </path>
                             </svg>
                         </div>
-                        {/* Spinner */}v>
+                        {/* Spinner */}
                     </div>
-                    <p className="text-red-300 text-xl mt-2">Loading Innovation...</p>
+                    <p className="text-red-300 text-xl mt-2">Loading...</p>
                 </div>
             </div>
         );

@@ -105,7 +105,7 @@ function Footer() {
             <div className="pt-8 text-center">
               <div className="mb-4">
                 <p className="text-gray-400 text-base mb-2">&copy; 2025 SURGE. All Rights Reserved.</p>
-                <p className="text-sm text-gray-500 font-light">Electrical Engineering Forum | Building the Future, Together.</p>
+                <p className="text-sm text-gray-500 font-light">Crafted with ❤️ by PRODDEC R&D Team</p>
               </div>
               
               {/* Additional elegant touch */}
