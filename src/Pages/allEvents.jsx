@@ -3,6 +3,7 @@ import { Calendar, Clock, MapPin, CheckCircle } from 'lucide-react';
 import Footer from '../Sections/footer';
 import { collection, getDocs,query,limit } from "firebase/firestore";
 import { db } from "../firebase"; // adjust path if needed
+import Navbar from "../components/navbar";
 
 const EventsPage = () => {
   const [events, setEvents] = useState([]);
@@ -51,9 +52,10 @@ const EventsPage = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <Navbar />
       {/* Header */}
       <header className="bg-black border-b border-red-500/30 py-8">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+        <div className="max-w-6xl mx-auto mt-16 px-6 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="text-white drop-shadow-lg">Past</span>{" "}
             <span className="text-red-500 drop-shadow-lg">Events</span>

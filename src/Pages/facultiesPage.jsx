@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Award, BookOpen, Users } from 'lucide-react';
 import Footer from '../Sections/footer';
 import { collection, getDocs,query,limit,addDoc } from "firebase/firestore";
 import { db } from "../firebase"; // adjust path if needed
+import Navbar from "../components/navbar";
 
 const FacultiesPage = () => {
   const [faculties, setFaculties] = useState([]);
@@ -51,8 +52,9 @@ const FacultiesPage = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
+      <Navbar/>
       <header className="bg-black border-b border-red-500/30 py-8">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+        <div className="max-w-6xl mx-auto px-6 mt-16 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="text-white drop-shadow-lg">Meet Our</span>{" "}
             <span className="text-red-500 drop-shadow-lg">Faculties</span>
