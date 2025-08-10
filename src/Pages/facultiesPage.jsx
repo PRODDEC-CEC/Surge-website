@@ -66,7 +66,7 @@ const FacultiesPage = () => {
                     alt={faculty.name}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2">
                     <div className="text-white">
                       <h3 className="text-lg font-bold group-hover:text-red-100 transition-colors duration-300">{faculty.name}</h3>
                       <p className="text-red-400 text-sm">{faculty.designation}</p>
@@ -89,13 +89,13 @@ const FacultiesPage = () => {
                   </div>
 
                   {/* Experience */}
-                  <div className="mb-4">
+                  {/* <div className="mb-4">
                     <div className="flex items-center gap-2 mb-1">
                       <Award className="w-4 h-4 text-red-400 group-hover:text-red-300 transition-colors duration-300" />
                       <span className="text-gray-400 text-sm">Experience</span>
                     </div>
                     <p className="text-white text-sm group-hover:text-gray-100 transition-colors duration-300">{faculty.experience}</p>
-                  </div>
+                  </div> */}
 
                   {/* Contact Info */}
                   <div className="space-y-2 border-t border-gray-700 group-hover:border-red-500/30 pt-4 transition-colors duration-300">
