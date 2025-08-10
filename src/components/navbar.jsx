@@ -12,7 +12,7 @@ function Navbar() {
     };
   return (
     <div>
-      <nav className="fixed top-0 left-0 right-0 z-50 py-4 px-6 flex justify-between items-center backdrop-blur-sm bg-black/20">
+      <nav className="fixed top-0 left-0 right-0 z-50 py-4 px-6 flex justify-between items-center backdrop-blur-sm bg-transparent border-b-2 border-black/10">
                 <a href="#hero" className="text-3xl font-extrabold text-white">
                     SURGE
                 </a>
