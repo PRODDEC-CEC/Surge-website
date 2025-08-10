@@ -197,7 +197,13 @@ function ExecomeSection() {
               {/* Loading overlay during transition */}
               {isTransitioning && (
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-900/20 via-black/40 to-gray-900/20 backdrop-blur-sm rounded-3xl flex items-center justify-center z-20">
-                  <div className="w-6 h-6 border-2 border-red-500 border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-12 h-12 text-red-500 mx-auto mb-4">
+                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 10V3L4 14h7v7l9-11h-7z" strokeDasharray="80" strokeDashoffset="80">
+                          <animate attributeName="stroke-dashoffset" values="80;0;80" dur="1s" repeatCount="indefinite"></animate>
+                        </path>
+                      </svg>
+                    </div>
                 </div>
               )}
             </div>

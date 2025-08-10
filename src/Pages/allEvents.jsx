@@ -6,20 +6,48 @@ import { db } from "../firebase"; // adjust path if needed
 
 const EventsPage = () => {
   const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
   
   useEffect(() => {
     async function fetchEvents() {
-      const eventsCol = collection(db, "events");
-      const q = query(eventsCol); 
-      const eventSnapshot = await getDocs(q);
-      const eventList = eventSnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setEvents(eventList);
+      try {
+        setLoading(true);
+        const eventsCol = collection(db, "events");
+        const q = query(eventsCol); 
+        const eventSnapshot = await getDocs(q);
+        const eventList = eventSnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setEvents(eventList);
+      } catch (error) {
+        console.error("Error fetching events:", error);
+      } finally {
+        setLoading(false);
+      }
     }
     fetchEvents();
   }, []);
+
+  // Full page loading component
+  const FullPageLoader = () => (
+    <div className="min-h-screen bg-black flex flex-col justify-center items-center">
+      <div className="w-16 h-16 text-red-500 mb-6">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 10V3L4 14h7v7l9-11h-7z" strokeDasharray="80" strokeDashoffset="80">
+            <animate attributeName="stroke-dashoffset" values="80;0;80" dur="1s" repeatCount="indefinite"></animate>
+          </path>
+        </svg>
+      </div>
+      <h2 className="text-2xl font-bold text-white mb-2">Loading Events</h2>
+      <p className="text-gray-400">Please wait while we fetch the latest events...</p>
+    </div>
+  );
+
+  // Show loading screen until data is loaded
+  if (loading) {
+    return <FullPageLoader />;
+  }
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -46,7 +74,7 @@ const EventsPage = () => {
             {events.map((event) => (
               <div 
                 key={event.id} 
-                className="group bg-gray-800 border border-gray-700 rounded-lg overflow-hidden hover:shadow-2xl hover:shadow-red-500/20 hover:scale-105 transition-all duration-500 hover:-translate-y-2"
+                className="group bg-gradient-to-br from-black to-gray-900 border border-gray-700 rounded-lg overflow-hidden hover:shadow-2xl hover:shadow-red-500/20 hover:scale-105 transition-all duration-500 hover:-translate-y-2"
               >
                 
                 {/* Event Image */}

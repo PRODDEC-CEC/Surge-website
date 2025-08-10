@@ -6,10 +6,12 @@ import { db } from "../firebase"; // adjust path if needed
 
 const FacultiesPage = () => {
   const [faculties, setFaculties] = useState([]);
+  const [loading, setLoading] = useState(true);
  
   useEffect(() => {
     async function fetchFaculties() {
       try {
+        setLoading(true);
         const facultiesCol = collection(db, "faculties"); // your Firestore collection
         const snapshot = await getDocs(facultiesCol);
 
@@ -19,17 +21,31 @@ const FacultiesPage = () => {
         
       } catch (error) {
         console.error("Error fetching faculties:", error);
+      } finally {
+        setLoading(false);
       }
     }
     fetchFaculties();
   }, []);
 
-  if (faculties.length === 0) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-black text-white text-xl">
-        Loading faculties...
+  // Full page loading component
+  const FullPageLoader = () => (
+    <div className="min-h-screen bg-black flex flex-col justify-center items-center">
+      <div className="w-16 h-16 text-red-500 mb-6">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 10V3L4 14h7v7l9-11h-7z" strokeDasharray="80" strokeDashoffset="80">
+            <animate attributeName="stroke-dashoffset" values="80;0;80" dur="1s" repeatCount="indefinite"></animate>
+          </path>
+        </svg>
       </div>
-    );
+      <h2 className="text-2xl font-bold text-white mb-2">Loading Faculties</h2>
+      <p className="text-gray-400">Please wait while we fetch our amazing faculty members...</p>
+    </div>
+  );
+
+  // Show loading screen until data is loaded
+  if (loading) {
+    return <FullPageLoader />;
   }
 
   return (
@@ -57,7 +73,7 @@ const FacultiesPage = () => {
             {faculties.map((faculty) => (
               <div
                 key={faculty.id}
-                className="group bg-gray-800 border border-gray-700 rounded-lg overflow-hidden  hover:shadow-2xl hover:shadow-red-500/20 hover:scale-105 transition-all duration-500 hover:-translate-y-2"
+                className="group bg-gradient-to-br from-black to-gray-900 border border-gray-700 rounded-lg overflow-hidden  hover:shadow-2xl hover:shadow-red-500/20 hover:scale-105 transition-all duration-500 hover:-translate-y-2"
               >
                 {/* Faculty Image */}
                 <div className="relative overflow-hidden">
