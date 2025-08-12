@@ -57,7 +57,7 @@ function HodSection() {
                             {/* Title with enhanced styling */}
                             <div className="relative">
                                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                                    Dr. John Doe
+                                    Dr. Raju M
                                 </h3>
                                 <div className="text-red-400 font-medium text-lg mb-6 tracking-wider">
                                     Head of Department
@@ -67,10 +67,10 @@ function HodSection() {
                             {/* Enhanced description with better typography */}
                             <div className="space-y-5">
                                 <p className="text-gray-300 text-lg leading-relaxed">
-                                    Dr. John Doe is a distinguished professor with over 20 years of experience in electrical engineering. His research focuses on sustainable energy solutions and innovative technologies.
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius corporis sed laboriosam, nihil magni modi magnam aliquid quo iusto, deserunt atque maxime fugit voluptate labore itaque rem, tempora totam facilis
                                 </p>
                                 <p className="text-gray-400 text-base leading-relaxed">
-                                    Under his leadership, the department has achieved significant milestones in research and student engagement, fostering a culture of innovation and excellence.
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum delectus quisquam, doloribus adipisci natus reprehenderit! Quidem quod aut aspernatur dolores sequi? Doloremque architecto sunt enim perspiciatis necessitatibus repellat reprehenderit vero.
                                 </p>
                             </div>
 

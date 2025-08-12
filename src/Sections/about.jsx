@@ -51,7 +51,7 @@ function AboutSection() {
                   {/* Enhanced statistics cards */}
                   <div className="absolute hidden bottom-4 right-4 lg:grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="bg-black/70 backdrop-blur-sm p-4 rounded-xl border border-red-800/50 hover:border-red-600/70 transition-all duration-300 group/stat">
-                      <div className="text-2xl font-bold text-red-500 group-hover/stat:text-red-400 transition-colors">500+</div>
+                      <div className="text-2xl font-bold text-red-500 group-hover/stat:text-red-400 transition-colors">100+</div>
                       <div className="text-xs sm:text-sm text-gray-400 font-medium">Active Members</div>
                     </div>
                     <div className="bg-black/70 backdrop-blur-sm p-4 rounded-xl border border-red-800/50 hover:border-red-600/70 transition-all duration-300 group/stat">
@@ -72,23 +72,24 @@ function AboutSection() {
                   <div className="relative">
                     <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-red-500 to-transparent rounded-full"></div>
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light pl-2">
-                      <strong className="text-red-400 font-semibold">SURGE</strong> is the premier technical forum for electrical engineering students,
-                      dedicated to fostering innovation, knowledge sharing, and professional development.
+                      Surge is a forum associated with the Electrical Department of College of Engineering Chengannur registered under KTU, aimed at uplifting the students technically in every way.
                     </p>
                   </div>
                   
                   <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light pl-2">
-                    We provide a dynamic platform for students to explore cutting-edge technologies,
-                    engage in hands-on projects, and connect with peers and industry experts.
+                     Surge incorporates its members with all the new innovative technologies, promote and implement their ideas and for bringing out the best in the electrical engineering field.
                   </p>
                 </div>
                 
                 {/* Enhanced call-to-action button */}
                 <div className="pt-4">
-                  <button className="group relative inline-flex items-center bg-red-700 hover:bg-red-600 text-white font-semibold py-4 px-8 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-red-500/50 overflow-hidden">
+                  <button className="group relative inline-flex items-center bg-red-700 hover:bg-red-600 text-white font-semibold py-4 px-8 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-red-500/50 overflow-hidden"
+                  
+                  onClick={() => window.location.href = '/learnMore'}
+                  >
                     {/* Button glow effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
+                   
                     <span className="relative mr-2 font-medium">Read More</span>
                     <svg 
                       className="relative w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" 

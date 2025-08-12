@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { getFirestore, collection, getDocs, query } from 'firebase/firestore';
-import { db } from "../firebase"; 
+import { db } from "../firebase"; // Assuming 'db' is correctly exported from your firebase config
 
 function TestimonialSection() {
-   
+  // testimonialsRef was declared but not used, so it has been removed.
   const [testimonials, setTestimonials] = useState([]);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
- 
+  // ✅ Fetch testimonials from Firestore
   useEffect(() => {
-     
+    // Renamed function from fetchMembers to fetchTestimonials for clarity
     async function fetchTestimonials() {
       try {
         const testimonialsCol = collection(db, "testimonials");
@@ -22,41 +22,54 @@ function TestimonialSection() {
           ...doc.data(),
         }));
         setTestimonials(fetchedTestimonials);
+        // Log the fetched data for debugging, not the function itself
         console.log("Fetched testimonials:", fetchedTestimonials); 
       } catch (error) {
+        // Corrected error message to reflect fetching testimonials
         console.error("Error fetching testimonials:", error);
       }
     }
     
     fetchTestimonials();
-  }, []); 
+  }, []); // Empty dependency array means this effect runs once on mount
 
   const changeSlide = (newIndex) => {
     // Prevent changing slide if it's the same index or a transition is already in progress
+    // Prevent changing slide if it's the same index or a transition is already in progre
     if (newIndex === currentTestimonialIndex || isTransitioning) return;
     
     setIsTransitioning(true);
-  
+    // First setTimeout to trigger the 'opacity-0' and 'translate-y-4' transition
     setTimeout(() => {
       setCurrentTestimonialIndex(newIndex);
-    
+      // Second setTimeout to allow the content to transition back in
+      // Duration set to 500ms to match the CSS 'transition-all duration-500'
       setTimeout(() => {
         setIsTransitioning(false);
-      }, 500);  
-    }, 150); 
+      }, 500); // This duration should match the CSS transition duration
+    }, 150); // Small delay before changing content to ensure exit animation starts
   };
 
- 
+  // ✅ Auto-slide functionality
   useEffect(() => {
-     
+    // Only auto-play if explicitly enabled, no transition is active, and there are testimonials
     if (isAutoPlaying && !isTransitioning && testimonials.length > 0) {
       const interval = setInterval(() => {
         const nextIndex = currentTestimonialIndex === testimonials.length - 1 ? 0 : currentTestimonialIndex + 1;
         changeSlide(nextIndex);
       }, 5000); // Change slide every 5 seconds
-      return () => clearInterval(interval);  
+      return () => clearInterval(interval); // Cleanup the interval on unmount or dependency change
     }
   }, [isAutoPlaying, currentTestimonialIndex, isTransitioning, testimonials.length]);
+
+  // ✅ Show loading until data is ready
+  if (testimonials.length === 0) {
+    return (
+      <section className="py-16 text-center text-white">
+        Loading testimonials...
+      </section>
+    );
+  }
 
   // ✅ Show loading until data is ready
   if (testimonials.length === 0) {
@@ -79,13 +92,14 @@ function TestimonialSection() {
         <div className="text-center mb-16 sm:mb-20">
           <div className="relative inline-block">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-white drop-shadow-lg">Testimonials</span>{" "}
+              <span className="text-white drop-shadow-lg">Our Achievements</span>{" "}
             </h2>
             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-28 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
             <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-14 h-0.5 bg-gradient-to-r from-transparent via-red-300 to-transparent"></div>
           </div>
         </div>
 
+        {/* Modern Card-based Design */}
         {/* Modern Card-based Design */}
         <div className="relative">
           <div 
@@ -103,31 +117,18 @@ function TestimonialSection() {
                 }`}
               >
                 <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-                  <div className="flex-shrink-0 text-center lg:text-left">
-                    <div className="relative inline-block">
-                      <img
-                        key={`avatar-${currentTestimonialIndex}`} // Key change to force re-render for avatar transition
-                        src={testimonials[currentTestimonialIndex].image}
-                        alt={testimonials[currentTestimonialIndex].name}
-                        className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-red-500/30 object-cover shadow-lg transition-all duration-500"
-                      />
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-500/20 to-transparent blur-xl"></div>
+                   <div className=' relative'>
+                    
+                    <div className="bg-black/70 backdrop-blur-sm p-4 rounded-xl border border-red-800/50 hover:border-red-600/70 transition-all duration-300 group/stat">
+                    <img src={testimonials[currentTestimonialIndex].image} alt="" className=' h-96' />
+                      <div className="text-2xl font-bold text-red-500 group-hover/stat:text-red-400 transition-colors">Worshop</div>
+                      <div className="text-xs sm:text-sm text-gray-400 font-medium">2024</div>
                     </div>
-                    <div className="mt-4">
-                      <h3 className="text-xl md:text-2xl font-bold text-white transition-all duration-500">
-                        {testimonials[currentTestimonialIndex].name}
-                      </h3>
-                      <p className="text-red-400 text-sm md:text-base font-medium transition-all duration-500">
-                        {testimonials[currentTestimonialIndex].year}
-                      </p>
-                    </div>
-                  </div>
+                   </div>
 
                   <div className="flex-1 text-center lg:text-left">
                     <div className="mb-6">
-                      <svg className="w-12 h-12 text-red-500/30 mx-auto lg:mx-0 transition-all duration-500" fill="currentColor" viewBox="0 0 32 32">
-                        <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14h-4c0-1.1.9-2 2-2V8zm12 0c-3.3 0-6 2.7-6 6v10h10V14h-4c0-1.1.9-2 2-2V8z"/>
-                      </svg>
+                       
                     </div>
                     <blockquote 
                       key={`text-${currentTestimonialIndex}`} // Key change to force re-render for text transition
@@ -139,7 +140,7 @@ function TestimonialSection() {
                 </div>
               </div>
 
-              {/* Enhanced transition overlay with lightning bolt */}
+              {/* Loading overlay during transition */}
               {isTransitioning && (
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-900/20 via-black/40 to-gray-900/20 backdrop-blur-sm rounded-3xl flex items-center justify-center z-20">
                   <div className="text-center">
@@ -227,10 +228,12 @@ function TestimonialSection() {
                   }`}
                 />
                 <div className="text-left">
-                  <p className={index === currentTestimonialIndex ? 'text-red-100' : 'text-white'}>
-                    {testimonial.name}
+                  <p className={`text-sm font-medium transition-colors duration-300 ${
+                    index === currentTestimonialIndex ? 'text-red-100' : 'text-white'
+                  }`}>
+                    {"Worshop"}
                   </p>
-                  <p className="text-gray-400 text-xs">{testimonial.year}</p>
+                  <p className="text-gray-400 text-xs">{"2024"}</p>
                 </div>
               </div>
             </button>

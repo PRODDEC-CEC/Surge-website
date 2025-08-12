@@ -44,7 +44,7 @@ function CallToAction() {
               {/* Enhanced statistics section */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
                 <div className="bg-black/30 backdrop-blur-sm border border-red-500/20 rounded-xl p-4 hover:border-red-500/40 transition-all duration-300 group">
-                  <div className="text-2xl sm:text-3xl font-bold text-red-500 group-hover:text-red-400 transition-colors">500+</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-red-500 group-hover:text-red-400 transition-colors">100+</div>
                   <div className="text-xs sm:text-sm text-gray-400 font-medium">Members</div>
                 </div>
                 <div className="bg-black/30 backdrop-blur-sm border border-red-500/20 rounded-xl p-4 hover:border-red-500/40 transition-all duration-300 group">
@@ -52,7 +52,7 @@ function CallToAction() {
                   <div className="text-xs sm:text-sm text-gray-400 font-medium">Events</div>
                 </div>
                 <div className="bg-black/30 backdrop-blur-sm border border-red-500/20 rounded-xl p-4 hover:border-red-500/40 transition-all duration-300 group">
-                  <div className="text-2xl sm:text-3xl font-bold text-red-500 group-hover:text-red-400 transition-colors">25+</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-red-500 group-hover:text-red-400 transition-colors">10+</div>
                   <div className="text-xs sm:text-sm text-gray-400 font-medium">Faculty</div>
                 </div>
                 <div className="bg-black/30 backdrop-blur-sm border border-red-500/20 rounded-xl p-4 hover:border-red-500/40 transition-all duration-300 group">
@@ -78,34 +78,10 @@ function CallToAction() {
                   <div className="absolute inset-0 -top-1 -left-1 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 transform translate-x-full group-hover:-translate-x-full transition-transform duration-1000"></div>
                 </button>
                 
-                <button className="group relative w-full sm:w-auto border-2 border-red-500/60 hover:border-red-500 hover:bg-red-500/10 text-red-400 hover:text-red-300 font-semibold py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-500 transform hover:scale-105 backdrop-blur-sm overflow-hidden">
-                  <span className="relative flex items-center justify-center gap-2 text-base sm:text-lg font-medium tracking-wide">
-                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Learn More
-                  </span>
-                  
-                  {/* Border glow effect */}
-                  <div className="absolute inset-0 border-2 border-red-500/0 group-hover:border-red-500/30 rounded-full transition-all duration-300"></div>
-                </button>
+                 
               </div>
 
-              {/* Additional engagement element
-              <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8 sm:mt-12">
-                <div className="flex items-center gap-2 px-4 py-2 bg-black/30 backdrop-blur-sm border border-red-500/20 rounded-full text-gray-400 text-xs sm:text-sm hover:border-red-500/40 transition-all duration-300">
-                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                  <span>Join 500+ Students</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-black/30 backdrop-blur-sm border border-red-500/20 rounded-full text-gray-400 text-xs sm:text-sm hover:border-red-500/40 transition-all duration-300">
-                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse delay-200"></div>
-                  <span>Free Workshops</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-black/30 backdrop-blur-sm border border-red-500/20 rounded-full text-gray-400 text-xs sm:text-sm hover:border-red-500/40 transition-all duration-300">
-                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse delay-400"></div>
-                  <span>Industry Connect</span>
-                </div>
-              </div> */}
+              
             </div>
           </div>
         </div>
