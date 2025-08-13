@@ -67,22 +67,34 @@ function HodSection() {
                             {/* Enhanced description with better typography */}
                             <div className="space-y-5">
                                 <p className="text-gray-300 text-lg leading-relaxed">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius corporis sed laboriosam, nihil magni modi magnam aliquid quo iusto, deserunt atque maxime fugit voluptate labore itaque rem, tempora totam facilis
+                                    Dr. Raju M is an accomplished academic and industry professional,
+                                    with a rich background in electrical engineering and a passion for
+                                    innovation. His leadership has been instrumental in guiding the
+                                    department toward excellence in both research and education.
                                 </p>
                                 <p className="text-gray-400 text-base leading-relaxed">
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum delectus quisquam, doloribus adipisci natus reprehenderit! Quidem quod aut aspernatur dolores sequi? Doloremque architecto sunt enim perspiciatis necessitatibus repellat reprehenderit vero.
+                                    With a doctorate in <b>Smart Grid</b> technology, he is at the
+                                    forefront of research in energy systems. His notable paper,
+                                    "Power flow control models of energy storage connected system in
+                                    smart grid under unbalanced conditions: an AI technique based
+                                    assessment," reflects his expertise in leveraging AI for
+                                    practical, real-world solutions.
                                 </p>
+                                <ul className="text-gray-300 text-base leading-relaxed space-y-2">
+                                    <li><strong>Email:</strong> <a href="mailto:rajumanuel@ceconline.edu" className="text-red-400 hover:underline">rajumanuel@ceconline.edu</a></li>
+                                    <li><strong>Phone:</strong> <span className="text-gray-400">+91 9447477755</span></li>
+                                </ul>
                             </div>
 
                             {/* Achievement highlights */}
                             <div className="grid grid-cols-2 gap-6 mt-8 pt-6 border-t border-gray-700/50">
                                 <div className="text-center lg:text-left">
-                                    <div className="text-2xl font-bold text-red-400">20+</div>
-                                    <div className="text-sm text-gray-400">Years Experience</div>
+                                    <div className="text-2xl font-bold text-red-400">10+</div>
+                                    <div className="text-sm text-gray-400">Years Teaching Experience</div>
                                 </div>
                                 <div className="text-center lg:text-left">
-                                    <div className="text-2xl font-bold text-red-400">50+</div>
-                                    <div className="text-sm text-gray-400">Research Papers</div>
+                                    <div className="text-2xl font-bold text-red-400">4+</div>
+                                    <div className="text-sm text-gray-400">Years Industrial Experience</div>
                                 </div>
                             </div>
                         </div>
