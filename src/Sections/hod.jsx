@@ -89,7 +89,7 @@ function HodSection() {
                             {/* Achievement highlights */}
                             <div className="grid grid-cols-2 gap-6 mt-8 pt-6 border-t border-gray-700/50">
                                 <div className="text-center lg:text-left">
-                                    <div className="text-2xl font-bold text-red-400">10+</div>
+                                    <div className="text-2xl font-bold text-red-400">25+</div>
                                     <div className="text-sm text-gray-400">Years Teaching Experience</div>
                                 </div>
                                 <div className="text-center lg:text-left">
@@ -117,3 +117,4 @@ function HodSection() {
 }
 
 export default HodSection;
+
