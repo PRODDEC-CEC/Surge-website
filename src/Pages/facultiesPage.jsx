@@ -82,7 +82,7 @@ const FacultiesPage = () => {
                   <img
                     src={faculty.image}
                     alt={faculty.name}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2">
                     <div className="text-white">
@@ -140,3 +140,4 @@ const FacultiesPage = () => {
 };
 
 export default FacultiesPage;
+
