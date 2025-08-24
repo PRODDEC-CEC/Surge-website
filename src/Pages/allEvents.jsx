@@ -29,6 +29,13 @@ const EventsPage = () => {
     }
     fetchEvents();
   }, []);
+ function isDatePassed(dateString) {
+       
+      const givenDate = new Date(dateString);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      return givenDate < today;
+    }
 
   // Full page loading component
   const FullPageLoader = () => (
@@ -89,7 +96,7 @@ const EventsPage = () => {
                   <div className="absolute top-3 right-3">
                     <span className="flex items-center gap-1 px-2 py-1 bg-green-600 group-hover:bg-green-500 text-white text-xs rounded-full transition-colors duration-300">
                       <CheckCircle className="w-3 h-3" />
-                      {event.status ? "Completed" : "Upcoming"}
+                      {isDatePassed(event.date) ? "Completed" : "Upcoming"}
                     </span>
                   </div>
                   

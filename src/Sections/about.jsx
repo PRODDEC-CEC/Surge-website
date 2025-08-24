@@ -1,5 +1,5 @@
 import React from 'react'
-
+import surge from '../assets/surge.jpg'
 function AboutSection() {
   return (
     <div>
@@ -40,9 +40,9 @@ function AboutSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                   
                   <img
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop&crop=center"
+                    src={surge}
                     alt="Electrical Engineering Innovation"
-                    className="w-full h-80 sm:h-96 object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
+                    className="w-full h-80 sm:h-96 object-contain transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
                   />
                   
                   {/* Refined border overlay */}
