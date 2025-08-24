@@ -140,4 +140,3 @@ const FacultiesPage = () => {
 };
 
 export default FacultiesPage;
-

@@ -2,86 +2,67 @@ import React, { useState, useEffect, useRef } from 'react';
 import { getFirestore, collection, getDocs, query } from 'firebase/firestore';
 import { db } from "../firebase"; // Assuming 'db' is correctly exported from your firebase config
 
-function TestimonialSection() {
-  // testimonialsRef was declared but not used, so it has been removed.
-  const [testimonials, setTestimonials] = useState([]);
-  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+function AchievementSection() {
+  const [achievements, setAchievements] = useState([]);
+  const [currentAchievementIndex, setCurrentAchievementIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // ✅ Fetch testimonials from Firestore
+  // ✅ Fetch achievements from Firestore
   useEffect(() => {
-    // Renamed function from fetchMembers to fetchTestimonials for clarity
-    async function fetchTestimonials() {
+    async function fetchAchievements() {
       try {
-        const testimonialsCol = collection(db, "testimonials");
-        const q = query(testimonialsCol);
+        const achievementsCol = collection(db, "achievements");
+        const q = query(achievementsCol);
         const snapshot = await getDocs(q);
-        const fetchedTestimonials = snapshot.docs.map(doc => ({
+        const fetchedAchievements = snapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data(),
         }));
-        setTestimonials(fetchedTestimonials);
-        // Log the fetched data for debugging, not the function itself
-        console.log("Fetched testimonials:", fetchedTestimonials); 
+        setAchievements(fetchedAchievements);
+        console.log("Fetched achievements:", fetchedAchievements); 
       } catch (error) {
-        // Corrected error message to reflect fetching testimonials
-        console.error("Error fetching testimonials:", error);
+        console.error("Error fetching achievements:", error);
       }
     }
     
-    fetchTestimonials();
-  }, []); // Empty dependency array means this effect runs once on mount
+    fetchAchievements();
+  }, []);
 
   const changeSlide = (newIndex) => {
-    // Prevent changing slide if it's the same index or a transition is already in progress
-    // Prevent changing slide if it's the same index or a transition is already in progre
-    if (newIndex === currentTestimonialIndex || isTransitioning) return;
+    if (newIndex === currentAchievementIndex || isTransitioning) return;
     
     setIsTransitioning(true);
-    // First setTimeout to trigger the 'opacity-0' and 'translate-y-4' transition
     setTimeout(() => {
-      setCurrentTestimonialIndex(newIndex);
-      // Second setTimeout to allow the content to transition back in
-      // Duration set to 500ms to match the CSS 'transition-all duration-500'
+      setCurrentAchievementIndex(newIndex);
       setTimeout(() => {
         setIsTransitioning(false);
-      }, 500); // This duration should match the CSS transition duration
-    }, 150); // Small delay before changing content to ensure exit animation starts
+      }, 500);
+    }, 150);
   };
 
   // ✅ Auto-slide functionality
   useEffect(() => {
-    // Only auto-play if explicitly enabled, no transition is active, and there are testimonials
-    if (isAutoPlaying && !isTransitioning && testimonials.length > 0) {
+    if (isAutoPlaying && !isTransitioning && achievements.length > 0) {
       const interval = setInterval(() => {
-        const nextIndex = currentTestimonialIndex === testimonials.length - 1 ? 0 : currentTestimonialIndex + 1;
+        const nextIndex = currentAchievementIndex === achievements.length - 1 ? 0 : currentAchievementIndex + 1;
         changeSlide(nextIndex);
-      }, 5000); // Change slide every 5 seconds
-      return () => clearInterval(interval); // Cleanup the interval on unmount or dependency change
+      }, 5000);
+      return () => clearInterval(interval);
     }
-  }, [isAutoPlaying, currentTestimonialIndex, isTransitioning, testimonials.length]);
+  }, [isAutoPlaying, currentAchievementIndex, isTransitioning, achievements.length]);
 
   // ✅ Show loading until data is ready
-  if (testimonials.length === 0) {
+  if (achievements.length === 0) {
     return (
       <section className="py-16 text-center text-white">
-        Loading testimonials...
-      </section>
-    );
-  }
-
-  // ✅ Show loading until data is ready
-  if (testimonials.length === 0) {
-    return (
-      <section className="py-16 text-center text-white">
-        Loading testimonials...
+        Loading achievements...
       </section>
     );
   }
 
   return (
-    <section id="testimonials" className="relative py-16 sm:py-24 overflow-hidden">
+    <section id="achievements" className="relative py-16 sm:py-24 overflow-hidden">
       {/* Enhanced background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-black/20"></div>
       <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-red-500/5 rounded-full blur-2xl animate-pulse"></div>
@@ -100,12 +81,11 @@ function TestimonialSection() {
         </div>
 
         {/* Modern Card-based Design */}
-        {/* Modern Card-based Design */}
         <div className="relative">
           <div 
             className="relative"
-            onMouseEnter={() => setIsAutoPlaying(false)} // Pause auto-play on hover
-            onMouseLeave={() => setIsAutoPlaying(true)} // Resume auto-play on mouse leave
+            onMouseEnter={() => setIsAutoPlaying(false)} 
+            onMouseLeave={() => setIsAutoPlaying(true)} 
           >
             <div className="bg-gradient-to-br from-gray-900/60 via-black/80 to-gray-900/60 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden">
               <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-red-500/30 rounded-tl-3xl"></div>
@@ -120,21 +100,18 @@ function TestimonialSection() {
                    <div className=' relative'>
                     
                     <div className="bg-black/70 backdrop-blur-sm p-4 rounded-xl border border-red-800/50 hover:border-red-600/70 transition-all duration-300 group/stat">
-                    <img src={testimonials[currentTestimonialIndex].image} alt="" className=' h-96' />
-                      <div className="text-2xl font-bold text-red-500 group-hover/stat:text-red-400 transition-colors">Worshop</div>
-                      <div className="text-xs sm:text-sm text-gray-400 font-medium">2024</div>
+                    <img src={achievements[currentAchievementIndex].image} alt="" className=' h-96' />
+                      <div className="text-2xl font-bold text-red-500 group-hover/stat:text-red-400 transition-colors">{achievements[currentAchievementIndex].name}</div>
+                       
                     </div>
                    </div>
 
                   <div className="flex-1 text-center lg:text-left">
-                    <div className="mb-6">
-                       
-                    </div>
                     <blockquote 
-                      key={`text-${currentTestimonialIndex}`} // Key change to force re-render for text transition
+                      key={`text-${currentAchievementIndex}`} 
                       className="text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed font-light italic mb-6 transition-all duration-500"
                     >
-                      "{testimonials[currentTestimonialIndex].message}"
+                      "{achievements[currentAchievementIndex].message}"
                     </blockquote>
                   </div>
                 </div>
@@ -144,7 +121,6 @@ function TestimonialSection() {
               {isTransitioning && (
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-900/20 via-black/40 to-gray-900/20 backdrop-blur-sm rounded-3xl flex items-center justify-center z-20">
                   <div className="text-center">
-                    {/* Lightning bolt icon */}
                     <div className="w-12 h-12 text-red-500 mx-auto mb-4">
                       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 10V3L4 14h7v7l9-11h-7z" strokeDasharray="80" strokeDashoffset="80">
@@ -152,7 +128,6 @@ function TestimonialSection() {
                         </path>
                       </svg>
                     </div>
-                    {/* Spinner */}
                   </div>
                 </div>
               )}
@@ -163,7 +138,7 @@ function TestimonialSection() {
           <div className="flex items-center justify-between mt-8">
             <button
               onClick={() => {
-                const prevIndex = currentTestimonialIndex === 0 ? testimonials.length - 1 : currentTestimonialIndex - 1;
+                const prevIndex = currentAchievementIndex === 0 ? achievements.length - 1 : currentAchievementIndex - 1;
                 changeSlide(prevIndex);
               }}
               disabled={isTransitioning}
@@ -175,13 +150,13 @@ function TestimonialSection() {
             </button>
 
             <div className="flex space-x-3">
-              {testimonials.map((_, index) => (
+              {achievements.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => changeSlide(index)}
                   disabled={isTransitioning}
                   className={`h-3 rounded-full transition-all duration-500 ${
-                    index === currentTestimonialIndex
+                    index === currentAchievementIndex
                       ? 'bg-gradient-to-r from-red-500 to-red-400 w-8 shadow-lg shadow-red-500/30'
                       : 'bg-gray-600 hover:bg-red-400 w-3 hover:shadow-md hover:shadow-red-400/20'
                   }`}
@@ -191,7 +166,7 @@ function TestimonialSection() {
 
             <button
               onClick={() => {
-                const nextIndex = currentTestimonialIndex === testimonials.length - 1 ? 0 : currentTestimonialIndex + 1;
+                const nextIndex = currentAchievementIndex === achievements.length - 1 ? 0 : currentAchievementIndex + 1;
                 changeSlide(nextIndex);
               }}
               disabled={isTransitioning}
@@ -206,32 +181,32 @@ function TestimonialSection() {
 
         {/* Preview cards */}
         <div className="hidden lg:flex justify-center gap-4 mt-12">
-          {testimonials.map((testimonial, index) => (
+          {achievements.map((achievement, index) => (
             <button
               key={index}
               onClick={() => changeSlide(index)}
               disabled={isTransitioning}
               className={`group relative p-4 rounded-xl border transition-all duration-500 hover:scale-105 ${
-                index === currentTestimonialIndex
+                index === currentAchievementIndex
                   ? 'bg-red-500/10 border-red-500/30 scale-105'
                   : 'bg-gray-900/30 border-gray-700/30 hover:border-red-500/20'
               }`}
             >
               <div className="flex items-center gap-3">
                 <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
+                  src={achievement.image}
+                  alt={achievement.name}
                   className={`w-10 h-10 rounded-full border-2 object-cover ${
-                    index === currentTestimonialIndex 
+                    index === currentAchievementIndex 
                       ? 'border-red-500/40 shadow-lg shadow-red-500/20' 
                       : 'border-red-500/20'
                   }`}
                 />
                 <div className="text-left">
                   <p className={`text-sm font-medium transition-colors duration-300 ${
-                    index === currentTestimonialIndex ? 'text-red-100' : 'text-white'
+                    index === currentAchievementIndex ? 'text-red-100' : 'text-white'
                   }`}>
-                    {"Worshop"}
+                    {"Workshop"}
                   </p>
                   <p className="text-gray-400 text-xs">{"2024"}</p>
                 </div>
@@ -244,4 +219,4 @@ function TestimonialSection() {
   );
 }
 
-export default TestimonialSection;
+export default AchievementSection;

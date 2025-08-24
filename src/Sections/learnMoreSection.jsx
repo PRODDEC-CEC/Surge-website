@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from './footer';
  
-function LearnMorePage({ onBack }) {
+function LearnMorePage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white font-sans">
       <section id="learn-more" className="relative py-20 sm:py-32 overflow-hidden">
@@ -77,24 +77,8 @@ function LearnMorePage({ onBack }) {
                 </div>
               </div>
 
-              {/* Back button */}
-              <div className="text-center pt-8">
-                <button
-                  onClick={onBack} // This function would typically handle navigation back to the previous page
-                  className="group relative inline-flex items-center bg-red-700 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-red-500/50 overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <span className="relative mr-2 font-medium">Back to About</span>
-                  <svg
-                    className="relative w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
-                  </svg>
-                </button>
-              </div>
+               
+              
             </div>
           </div>
         </div>

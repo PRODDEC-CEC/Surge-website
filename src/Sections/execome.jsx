@@ -255,6 +255,10 @@ function ExecomeSection() {
                 <h3 className="text-xl font-bold text-white mb-2 group-hover:text-red-100 transition-colors duration-300">
                   {member.name}
                 </h3>
+                
+                 
+
+                 
               </div>
 
               {/* Hover Effects */}

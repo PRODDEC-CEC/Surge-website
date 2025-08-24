@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaAngleRight } from "react-icons/fa6";
-import hod from '../assets/faculties/hod.jpg'; // Adjust the path as necessary
 
 function HodSection() {
     return (
@@ -39,7 +38,7 @@ function HodSection() {
                                 <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                                 
                                 <img
-                                    src={hod}
+                                    src="https://res.cloudinary.com/drqepoigy/image/upload/v1756015246/DR_RAJU_M_Faculty_Advisor_crqp6w.png"
                                     alt="HOD"
                                     className="w-full h-auto transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
                                 />
@@ -89,7 +88,7 @@ function HodSection() {
                             {/* Achievement highlights */}
                             <div className="grid grid-cols-2 gap-6 mt-8 pt-6 border-t border-gray-700/50">
                                 <div className="text-center lg:text-left">
-                                    <div className="text-2xl font-bold text-red-400">25+</div>
+                                    <div className="text-2xl font-bold text-red-400">10+</div>
                                     <div className="text-sm text-gray-400">Years Teaching Experience</div>
                                 </div>
                                 <div className="text-center lg:text-left">
@@ -117,4 +116,3 @@ function HodSection() {
 }
 
 export default HodSection;
-

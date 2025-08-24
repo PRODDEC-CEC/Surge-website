@@ -89,7 +89,7 @@ const EventsPage = () => {
                   <div className="absolute top-3 right-3">
                     <span className="flex items-center gap-1 px-2 py-1 bg-green-600 group-hover:bg-green-500 text-white text-xs rounded-full transition-colors duration-300">
                       <CheckCircle className="w-3 h-3" />
-                      Completed
+                      {event.status ? "Completed" : "Upcoming"}
                     </span>
                   </div>
                   
