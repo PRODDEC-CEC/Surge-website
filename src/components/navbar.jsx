@@ -19,7 +19,7 @@ function Navbar() {
                 
                 {/* Desktop Navigation */}
                 <ul className="hidden md:flex space-x-8 text-lg font-normal">
-                    {['about', 'events', 'committee', 'testimonials'].map((section) => (
+                    {['about', 'events', 'committee', 'achievements'].map((section) => (
                         <li key={section}>
                             <button
                                 onClick={() => smoothScrollTo(section)}
