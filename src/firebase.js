@@ -3,9 +3,9 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDE-wa5E-MToEWgcJlSb2sl6LI1X8aAzCM",
-  authDomain: "verdant-market-392401.firebaseapp.com",
-  databaseURL: "https://verdant-market-392401-default-rtdb.firebaseio.com",
+  apiKey: process.env.APIKEY ,
+  authDomain: process.env.AUTHDOMAIN ,
+  databaseURL: process.env.DATABASEURL ,
   projectId: "verdant-market-392401",
   storageBucket: "verdant-market-392401.appspot.com",
   messagingSenderId: "359504785858",
