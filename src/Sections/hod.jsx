@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaAngleRight } from "react-icons/fa6";
-import hod from '../assets/faculties/hod.jpg'; // Adjust the path as necessary
 
 function HodSection() {
     return (
@@ -39,7 +38,7 @@ function HodSection() {
                                 <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                                 
                                 <img
-                                    src={hod}
+                                    src="https://res.cloudinary.com/drqepoigy/image/upload/v1756015246/DR_RAJU_M_Faculty_Advisor_crqp6w.png"
                                     alt="HOD"
                                     className="w-full h-auto transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
                                 />
@@ -57,7 +56,7 @@ function HodSection() {
                             {/* Title with enhanced styling */}
                             <div className="relative">
                                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                                    Dr. John Doe
+                                    Dr. Raju M
                                 </h3>
                                 <div className="text-red-400 font-medium text-lg mb-6 tracking-wider">
                                     Head of Department
@@ -67,22 +66,34 @@ function HodSection() {
                             {/* Enhanced description with better typography */}
                             <div className="space-y-5">
                                 <p className="text-gray-300 text-lg leading-relaxed">
-                                    Dr. John Doe is a distinguished professor with over 20 years of experience in electrical engineering. His research focuses on sustainable energy solutions and innovative technologies.
+                                    Dr. Raju M is an accomplished academic and industry professional,
+                                    with a rich background in electrical engineering and a passion for
+                                    innovation. His leadership has been instrumental in guiding the
+                                    department toward excellence in both research and education.
                                 </p>
                                 <p className="text-gray-400 text-base leading-relaxed">
-                                    Under his leadership, the department has achieved significant milestones in research and student engagement, fostering a culture of innovation and excellence.
+                                    With a doctorate in <b>Smart Grid</b> technology, he is at the
+                                    forefront of research in energy systems. His notable paper,
+                                    "Power flow control models of energy storage connected system in
+                                    smart grid under unbalanced conditions: an AI technique based
+                                    assessment," reflects his expertise in leveraging AI for
+                                    practical, real-world solutions.
                                 </p>
+                                <ul className="text-gray-300 text-base leading-relaxed space-y-2">
+                                    <li><strong>Email:</strong> <a href="mailto:rajumanuel@ceconline.edu" className="text-red-400 hover:underline">rajumanuel@ceconline.edu</a></li>
+                                    <li><strong>Phone:</strong> <span className="text-gray-400">+91 9447477755</span></li>
+                                </ul>
                             </div>
 
                             {/* Achievement highlights */}
                             <div className="grid grid-cols-2 gap-6 mt-8 pt-6 border-t border-gray-700/50">
                                 <div className="text-center lg:text-left">
-                                    <div className="text-2xl font-bold text-red-400">20+</div>
-                                    <div className="text-sm text-gray-400">Years Experience</div>
+                                    <div className="text-2xl font-bold text-red-400">10+</div>
+                                    <div className="text-sm text-gray-400">Years Teaching Experience</div>
                                 </div>
                                 <div className="text-center lg:text-left">
-                                    <div className="text-2xl font-bold text-red-400">50+</div>
-                                    <div className="text-sm text-gray-400">Research Papers</div>
+                                    <div className="text-2xl font-bold text-red-400">4+</div>
+                                    <div className="text-sm text-gray-400">Years Industrial Experience</div>
                                 </div>
                             </div>
                         </div>
