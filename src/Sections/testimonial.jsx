@@ -208,7 +208,7 @@ function AchievementSection() {
                   }`}>
                     {achievement.name}
                   </p>
-                  <p className="text-gray-400 text-xs">{"2024"}</p>
+{/*                   <p className="text-gray-400 text-xs">{"2024"}</p> */}
                 </div>
               </div>
             </button>
@@ -220,4 +220,5 @@ function AchievementSection() {
 }
 
 export default AchievementSection;
+
 
