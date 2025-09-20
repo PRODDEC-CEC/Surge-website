@@ -85,15 +85,23 @@ function Footer() {
               <div className="space-y-3 text-gray-400 flex flex-col items-center md:items-center">
                 <div className="group flex items-center justify-center md:justify-start gap-3 hover:text-red-400 transition-colors duration-300">
                   <span className="text-lg">📧</span>
-                  <span>info@surge.edu</span>
+                  <span>surge@ceconline.edu</span>
                 </div>
                 <div className="group flex items-center justify-center md:justify-start gap-3 hover:text-red-400 transition-colors duration-300">
                   <span className="text-lg">📞</span>
-                  <span>+91 98765 43210</span>
+                  <span>Raju M:+91 9747405790</span>
+                </div>
+                <div className="group flex items-center justify-center md:justify-start gap-3 hover:text-red-400 transition-colors duration-300">
+                  <span className="text-lg">📞</span>
+                  <span>Sharon:+91 9747959902</span>
+                </div>
+                <div className="group flex items-center justify-center md:justify-start gap-3 hover:text-red-400 transition-colors duration-300">
+                  <span className="text-lg">📞</span>
+                  <span>Gayatri:+91 6238453639</span>
                 </div>
                 <div className="group flex items-center justify-center md:justify-start gap-3 hover:text-red-400 transition-colors duration-300">
                   <span className="text-lg">📍</span>
-                  <span>EE Department, University Campus</span>
+                  <span>EC Department, College of Engineering Chengannur</span>
                 </div>
               </div>
             </div>
@@ -121,3 +129,4 @@ function Footer() {
 }
 
 export default Footer
+
