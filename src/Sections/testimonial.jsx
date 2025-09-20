@@ -206,7 +206,7 @@ function AchievementSection() {
                   <p className={`text-sm font-medium transition-colors duration-300 ${
                     index === currentAchievementIndex ? 'text-red-100' : 'text-white'
                   }`}>
-                    {"Workshop"}
+                    {achievement.name}
                   </p>
                   <p className="text-gray-400 text-xs">{"2024"}</p>
                 </div>
@@ -220,3 +220,4 @@ function AchievementSection() {
 }
 
 export default AchievementSection;
+
