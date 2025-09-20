@@ -99,9 +99,9 @@ function Footer() {
                   <span className="text-lg">📞</span>
                   <span>Gayatri:+91 6238453639</span>
                 </div>
-                <div className="group flex items-center justify-center md:justify-start gap-3 hover:text-red-400 transition-colors duration-300">
+                <div className="group flex justify-center md:justify-start gap-3 hover:text-red-400 transition-colors duration-300">
                   <span className="text-lg">📍</span>
-                  <span>EC Department, College of Engineering Chengannur</span>
+                  <span>EE Department, College of Engineering Chengannur</span>
                 </div>
               </div>
             </div>
@@ -129,4 +129,5 @@ function Footer() {
 }
 
 export default Footer
+
 
