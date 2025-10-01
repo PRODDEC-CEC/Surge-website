@@ -81,7 +81,9 @@ function HodSection() {
                                 </p>
                                 <ul className="text-gray-300 text-base leading-relaxed space-y-2">
                                     <li><strong>Email:</strong> <a href="mailto:rajumanuel@ceconline.edu" className="text-red-400 hover:underline">rajumanuel@ceconline.edu</a></li>
-                                    <li><strong>Phone:</strong> <span className="text-gray-400">+91 9447477755</span></li>
+                                    <li className=' flex'><strong>Phone: </strong> 
+                                     <h3 className="text-gray-400 "> +91 9946509821 <br /> +91 9747405790</h3>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -114,5 +116,6 @@ function HodSection() {
         </section>
     );
 }
+
 
 export default HodSection;
